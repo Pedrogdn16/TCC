@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exoesqueletos Robóticos | Tecnologia que amplia possibilidades</title>
+<meta name="description" content="Projeto acadêmico sobre exoesqueletos robóticos: história, funcionamento, tipos, aplicações e o futuro dessa tecnologia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<!-- ===================== BACKGROUND FX ===================== -->
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="topo">
+  <div class="header-inner">
+    <a href="#topo" class="logo">
+      <span class="logo-bracket">&lt;</span>EXO<span class="logo-accent">SKEL</span><span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#topo" class="nav-link active-link">Início</a></li>
+        <li><a href="#historia" class="nav-link">História</a></li>
+        <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+        <li><a href="#tipos" class="nav-link">Tipos</a></li>
+        <li><a href="#aplicacoes" class="nav-link">Aplicações</a></li>
+        <li><a href="#nosso-projeto" class="nav-link">Nosso Projeto</a></li>
+        <li><a href="#equipe" class="nav-link">Equipe</a></li>
+        <li><a href="#formulario" class="nav-link">Formulário</a></li>
+        <li><a href="#referencias" class="nav-link">Referências</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== 1. HERO ===================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text fade-in">
+      <span class="eyebrow"><span class="pulse-dot"></span> PROJETO ACADÊMICO · TCC 2026</span>
+      <h1>EXOESQUELETOS<br><span class="text-accent">ROBÓTICOS</span></h1>
+      <p class="hero-tagline">"Tecnologia que amplia possibilidades."</p>
+      <p class="hero-desc">
+        Exoesqueletos robóticos são estruturas mecânicas vestíveis, equipadas com sensores,
+        atuadores e sistemas de controle, capazes de auxiliar, ampliar ou reabilitar os
+        movimentos do corpo humano. Nascida da união entre engenharia mecânica, eletrônica
+        e inteligência artificial, essa tecnologia já transforma a medicina, a indústria e a
+        pesquisa científica ao redor do mundo — e é o tema central deste projeto.
+      </p>
+      <div class="hero-buttons">
+        <a href="#historia" class="btn btn-primary">Conheça a Tecnologia</a>
+        <a href="#nosso-projeto" class="btn btn-outline">Nosso Projeto</a>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-in">
+      <div class="exo-glow"></div>
+      <svg class="exo-illustration" viewBox="0 0 420 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de um exoesqueleto robótico">
+        <defs>
+          <linearGradient id="metalGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#12395c"/>
+            <stop offset="100%" stop-color="#071a2b"/>
+          </linearGradient>
+          <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00A8E8" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#00A8E8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- circuit lines background -->
+        <g stroke="#0B3D66" stroke-width="1" opacity="0.6">
+          <path d="M20 80 H120 V140" fill="none"/>
+          <path d="M400 100 H300 V180" fill="none"/>
+          <path d="M30 480 H140 V420" fill="none"/>
+          <path d="M390 470 H280 V400" fill="none"/>
+        </g>
+        <circle cx="120" cy="140" r="3" fill="#00A8E8"/>
+        <circle cx="300" cy="180" r="3" fill="#00A8E8"/>
+        <circle cx="140" cy="420" r="3" fill="#00A8E8"/>
+        <circle cx="280" cy="400" r="3" fill="#00A8E8"/>
+
+        <!-- head/HUD -->
+        <circle cx="210" cy="70" r="30" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="2"/>
+        <rect x="192" y="60" width="36" height="10" rx="5" fill="#00A8E8" opacity="0.85"/>
+
+        <!-- torso frame -->
+        <rect x="160" y="105" width="100" height="120" rx="18" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="2"/>
+        <circle cx="210" cy="160" r="22" fill="url(#coreGlow)"/>
+        <circle cx="210" cy="160" r="10" fill="#00A8E8"/>
+
+        <!-- shoulder joints + arms -->
+        <circle cx="150" cy="120" r="14" fill="#0B3D66" stroke="#00A8E8" stroke-width="2"/>
+        <circle cx="270" cy="120" r="14" fill="#0B3D66" stroke="#00A8E8" stroke-width="2"/>
+        <rect x="118" y="118" width="34" height="16" rx="8" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+        <rect x="268" y="118" width="34" height="16" rx="8" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+        <rect x="108" y="150" width="16" height="70" rx="8" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+        <rect x="296" y="150" width="16" height="70" rx="8" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+        <circle cx="116" cy="228" r="10" fill="#0B3D66" stroke="#00A8E8" stroke-width="1.5"/>
+        <circle cx="304" cy="228" r="10" fill="#0B3D66" stroke="#00A8E8" stroke-width="1.5"/>
+
+        <!-- pelvis / hip actuators -->
+        <rect x="170" y="225" width="80" height="30" rx="12" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="2"/>
+        <circle cx="185" cy="255" r="14" fill="#0B3D66" stroke="#00A8E8" stroke-width="2"/>
+        <circle cx="235" cy="255" r="14" fill="#0B3D66" stroke="#00A8E8" stroke-width="2"/>
+
+        <!-- legs -->
+        <rect x="172" y="265" width="22" height="110" rx="10" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+        <rect x="226" y="265" width="22" height="110" rx="10" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+        <circle cx="183" cy="378" r="13" fill="#0B3D66" stroke="#00A8E8" stroke-width="2"/>
+        <circle cx="237" cy="378" r="13" fill="#0B3D66" stroke="#00A8E8" stroke-width="2"/>
+        <rect x="174" y="392" width="20" height="95" rx="9" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+        <rect x="228" y="392" width="20" height="95" rx="9" fill="url(#metalGrad)" stroke="#00A8E8" stroke-width="1.5"/>
+
+        <!-- feet -->
+        <rect x="164" y="487" width="42" height="16" rx="6" fill="#0B3D66" stroke="#00A8E8" stroke-width="1.5"/>
+        <rect x="216" y="487" width="42" height="16" rx="6" fill="#0B3D66" stroke="#00A8E8" stroke-width="1.5"/>
+
+        <!-- battery pack -->
+        <rect x="188" y="230" width="46" height="28" rx="4" fill="#00A8E8" opacity="0.15" stroke="#00A8E8" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- quick stats -->
+  <div class="stats-strip fade-in">
+    <div class="stat-item">
+      <span class="stat-icon">⏱</span>
+      <span class="stat-label">Evolução tecnológica<br><small>Desde 1965 até hoje</small></span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">🏥</span>
+      <span class="stat-label">Aplicações médicas<br><small>Reabilitação e mobilidade</small></span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">🏭</span>
+      <span class="stat-label">Aplicações industriais<br><small>Redução de esforço físico</small></span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-icon">🔬</span>
+      <span class="stat-label">Pesquisa e inovação<br><small>Universidades e empresas</small></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. VOCÊ SABIA ===================== -->
+<section class="section" id="voce-sabia">
+  <div class="section-inner">
+    <span class="section-eyebrow">CURIOSIDADES</span>
+    <h2 class="section-title">Você sabia?</h2>
+    <p class="section-subtitle">Alguns fatos interessantes sobre exoesqueletos robóticos.</p>
+
+    <div class="curiosity-grid">
+      <div class="curiosity-card fade-in">
+        <div class="curiosity-icon">🧠</div>
+        <h3>Sensores que leem intenção</h3>
+        <p>Alguns exoesqueletos, como o HAL (Cyberdyne), utilizam sensores que captam sinais bioelétricos na pele para identificar a intenção de movimento do usuário antes mesmo de o movimento acontecer.</p>
+      </div>
+      <div class="curiosity-card fade-in">
+        <div class="curiosity-icon">🏋️</div>
+        <h3>Décadas de história</h3>
+        <p>O primeiro exoesqueleto motorizado de corpo inteiro, o Hardiman, foi desenvolvido pela General Electric ainda na década de 1960 — muito antes da eletrônica moderna existir.</p>
+      </div>
+      <div class="curiosity-card fade-in">
+        <div class="curiosity-icon">🚶</div>
+        <h3>Andar de novo</h3>
+        <p>Em 2014, o exoesqueleto ReWalk se tornou o primeiro a receber aprovação da FDA (agência regulatória dos EUA) para uso pessoal domiciliar por pessoas com lesão medular.</p>
+      </div>
+      <div class="curiosity-card fade-in">
+        <div class="curiosity-icon">⚙️</div>
+        <h3>Passivo x motorizado</h3>
+        <p>Nem todo exoesqueleto tem motor. Modelos passivos usam molas, contrapesos e materiais elásticos para redistribuir esforço, sem gastar energia elétrica.</p>
+      </div>
+      <div class="curiosity-card fade-in">
+        <div class="curiosity-icon">🎬</div>
+        <h3>Inspiração para a ficção</h3>
+        <p>O projeto Hardiman despertou tanto fascínio que inspirou representações de exoesqueletos em filmes e histórias em quadrinhos nas décadas seguintes.</p>
+      </div>
+      <div class="curiosity-card fade-in">
+        <div class="curiosity-icon">🏗️</div>
+        <h3>Fora da medicina</h3>
+        <p>Exoesqueletos também são usados na construção civil e em operações de limpeza de áreas de risco, ajudando trabalhadores a levantar cargas pesadas com menos fadiga.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. HISTÓRIA ===================== -->
+<section class="section section-alt" id="historia">
+  <div class="section-inner">
+    <span class="section-eyebrow">LINHA DO TEMPO</span>
+    <h2 class="section-title">História dos Exoesqueletos</h2>
+    <p class="section-subtitle">Clique em cada marco para conhecer sua importância na evolução da tecnologia.</p>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-track"></div>
+      <div class="timeline-points" id="timelinePoints">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+    <div class="timeline-detail" id="timelineDetail">
+      <!-- populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. COMO FUNCIONA ===================== -->
+<section class="section" id="como-funciona">
+  <div class="section-inner">
+    <span class="section-eyebrow">ENGENHARIA</span>
+    <h2 class="section-title">Como Funciona?</h2>
+    <p class="section-subtitle">Clique em cada parte do exoesqueleto para entender sua função.</p>
+
+    <div class="how-it-works">
+      <div class="how-diagram">
+        <svg viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" id="diagramSvg">
+          <rect x="120" y="40" width="80" height="90" rx="14" fill="#0B3D66" stroke="#123" opacity="0.4"/>
+          <!-- Sensor -->
+          <g class="hotspot" data-part="sensor">
+            <circle cx="160" cy="30" r="16" class="hotspot-node"/>
+            <text x="160" y="35" class="hotspot-label" text-anchor="middle">1</text>
+          </g>
+          <!-- Controller (chest) -->
+          <g class="hotspot" data-part="controlador">
+            <circle cx="160" cy="95" r="16" class="hotspot-node"/>
+            <text x="160" y="100" class="hotspot-label" text-anchor="middle">2</text>
+          </g>
+          <!-- Battery -->
+          <g class="hotspot" data-part="bateria">
+            <circle cx="160" cy="150" r="16" class="hotspot-node"/>
+            <text x="160" y="155" class="hotspot-label" text-anchor="middle">3</text>
+          </g>
+          <!-- Motor / actuator (hip) -->
+          <g class="hotspot" data-part="motores">
+            <circle cx="115" cy="200" r="16" class="hotspot-node"/>
+            <text x="115" y="205" class="hotspot-label" text-anchor="middle">4</text>
+          </g>
+          <g class="hotspot" data-part="motores">
+            <circle cx="205" cy="200" r="16" class="hotspot-node"/>
+            <text x="205" y="205" class="hotspot-label" text-anchor="middle">4</text>
+          </g>
+          <!-- Structure (legs) -->
+          <g class="hotspot" data-part="estrutura">
+            <circle cx="115" cy="330" r="16" class="hotspot-node"/>
+            <text x="115" y="335" class="hotspot-label" text-anchor="middle">5</text>
+          </g>
+          <g class="hotspot" data-part="estrutura">
+            <circle cx="205" cy="330" r="16" class="hotspot-node"/>
+            <text x="205" y="335" class="hotspot-label" text-anchor="middle">5</text>
+          </g>
+          <!-- Software (near controller, small chip) -->
+          <g class="hotspot" data-part="software">
+            <circle cx="160" cy="440" r="16" class="hotspot-node"/>
+            <text x="160" y="445" class="hotspot-label" text-anchor="middle">6</text>
+          </g>
+
+          <!-- simplified body/exo silhouette -->
+          <g fill="none" stroke="#1c4d78" stroke-width="2" opacity="0.65">
+            <circle cx="160" cy="30" r="18"/>
+            <rect x="130" y="55" width="60" height="80" rx="14"/>
+            <line x1="130" y1="70" x2="95" y2="120"/>
+            <line x1="190" y1="70" x2="225" y2="120"/>
+            <line x1="95" y1="120" x2="95" y2="170"/>
+            <line x1="225" y1="120" x2="225" y2="170"/>
+            <rect x="130" y="135" width="60" height="35" rx="10"/>
+            <line x1="145" y1="170" x2="115" y2="330"/>
+            <line x1="175" y1="170" x2="205" y2="330"/>
+            <line x1="115" y1="330" x2="115" y2="420"/>
+            <line x1="205" y1="330" x2="205" y2="420"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="how-info" id="howInfo">
+        <h3 id="howTitle">Explore o exoesqueleto</h3>
+        <p id="howText">Clique nos pontos numerados na ilustração ao lado para descobrir a função de cada componente — sensores, controlador, bateria, motores, estrutura e software.</p>
+      </div>
+    </div>
+
+    <div class="flow-diagram fade-in">
+      <div class="flow-step"><span>Usuário</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span>Sensores</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span>Controlador</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span>Atuadores</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span>Movimento</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. TIPOS ===================== -->
+<section class="section section-alt" id="tipos">
+  <div class="section-inner">
+    <span class="section-eyebrow">CLASSIFICAÇÃO</span>
+    <h2 class="section-title">Tipos de Exoesqueletos</h2>
+    <p class="section-subtitle">Os exoesqueletos podem ser classificados pela região do corpo que atendem e pela forma como fornecem assistência.</p>
+
+    <div class="cards-grid">
+      <div class="tech-card fade-in">
+        <div class="tech-card-icon">🦵</div>
+        <h3>Membros Inferiores</h3>
+        <p>Focados nas pernas e no quadril, auxiliam a caminhada, o suporte de carga e a reabilitação de marcha. É a categoria mais comum em uso clínico, como no ReWalk e no HAL de pernas.</p>
+      </div>
+      <div class="tech-card fade-in">
+        <div class="tech-card-icon">💪</div>
+        <h3>Membros Superiores</h3>
+        <p>Auxiliam os movimentos dos braços e ombros, sendo úteis em tarefas industriais repetitivas ou na reabilitação de pacientes com limitações motoras nos braços.</p>
+      </div>
+      <div class="tech-card fade-in">
+        <div class="tech-card-icon">🧍</div>
+        <h3>Corpo Inteiro</h3>
+        <p>Abrangem tronco, braços e pernas simultaneamente, como o histórico Hardiman. São mais complexos de controlar, pois envolvem várias articulações trabalhando em conjunto.</p>
+      </div>
+    </div>
+
+    <div class="split-compare fade-in">
+      <div class="compare-card">
+        <div class="compare-head"><span class="compare-tag">PASSIVOS</span></div>
+        <p>Não dependem necessariamente de motores. Utilizam molas, materiais elásticos, contrapesos e mecanismos puramente estruturais para redistribuir o esforço físico do usuário.</p>
+        <ul>
+          <li>Mais leves e simples</li>
+          <li>Não exigem bateria</li>
+          <li>Assistência limitada</li>
+        </ul>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-card">
+        <div class="compare-head"><span class="compare-tag compare-tag-accent">MOTORIZADOS</span></div>
+        <p>Utilizam motores e atuadores elétricos ou hidráulicos controlados por software para fornecer assistência ativa ao movimento do usuário.</p>
+        <ul>
+          <li>Maior potência de assistência</li>
+          <li>Necessitam de bateria</li>
+          <li>Sistemas de controle mais complexos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. APLICAÇÕES ===================== -->
+<section class="section" id="aplicacoes">
+  <div class="section-inner">
+    <span class="section-eyebrow">USO NO MUNDO REAL</span>
+    <h2 class="section-title">Aplicações</h2>
+    <p class="section-subtitle">Onde os exoesqueletos já estão sendo utilizados ou pesquisados.</p>
+
+    <div class="app-grid">
+      <div class="app-card fade-in">
+        <div class="app-icon">🏥</div>
+        <h3>Medicina</h3>
+        <p>Reabilitação motora e auxílio à mobilidade de pessoas com lesões medulares, AVC ou outras condições neuromusculares.</p>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-icon">🏭</div>
+        <h3>Indústria</h3>
+        <p>Redução do esforço físico e da fadiga em tarefas repetitivas, como carregamento de peças e trabalho em linha de montagem.</p>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-icon">🔬</div>
+        <h3>Pesquisa</h3>
+        <p>Desenvolvimento contínuo de novos sensores, materiais, atuadores e algoritmos de controle em universidades e laboratórios.</p>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-icon">🚀</div>
+        <h3>Exploração</h3>
+        <p>Estudos sobre possíveis aplicações em ambientes extremos, como operações de resgate e limpeza de áreas de risco.</p>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-icon">♿</div>
+        <h3>Acessibilidade</h3>
+        <p>Tecnologias voltadas à autonomia e à qualidade de vida de pessoas com mobilidade reduzida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. COMPARAÇÃO ===================== -->
+<section class="section section-alt" id="comparacao">
+  <div class="section-inner">
+    <span class="section-eyebrow">COMPARATIVO</span>
+    <h2 class="section-title">Exoesqueleto x Corpo Humano</h2>
+    <p class="section-subtitle">
+      Uma comparação conceitual de como o exoesqueleto pode complementar o corpo humano em diferentes aspectos.
+      Esta comparação é qualitativa — não representa medições numéricas exatas.
+    </p>
+
+    <div class="compare-bars">
+      <div class="bar-row">
+        <span class="bar-label">Força para carregar peso</span>
+        <div class="bar-track"><div class="bar-fill" data-human="35" data-exo="90"></div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Mobilidade / naturalidade</span>
+        <div class="bar-track"><div class="bar-fill" data-human="95" data-exo="55"></div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Suporte em tarefas repetitivas</span>
+        <div class="bar-track"><div class="bar-fill" data-human="40" data-exo="85"></div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Redução de esforço físico</span>
+        <div class="bar-track"><div class="bar-fill" data-human="30" data-exo="80"></div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Autonomia energética</span>
+        <div class="bar-track"><div class="bar-fill" data-human="100" data-exo="45"></div></div>
+      </div>
+      <div class="bar-legend">
+        <span><i class="dot dot-human"></i> Corpo Humano</span>
+        <span><i class="dot dot-exo"></i> Exoesqueleto</span>
+      </div>
+      <p class="compare-note">
+        Representação ilustrativa baseada em características gerais descritas em fontes sobre exoesqueletos
+        de reabilitação e assistência (ver seção Referências), sem uso de dados estatísticos inventados.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. NOSSO PROJETO ===================== -->
+<section class="section" id="nosso-projeto">
+  <div class="section-inner">
+    <span class="section-eyebrow">TRABALHO DO GRUPO</span>
+    <h2 class="section-title">Nosso Projeto</h2>
+    <p class="section-subtitle">Apresentação do projeto desenvolvido para o TCC/trabalho escolar.</p>
+
+    <div class="project-grid">
+      <div class="project-card fade-in">
+        <span class="project-tag">01</span>
+        <h3>Objetivo</h3>
+        <p><em>[Edite aqui: descreva o objetivo principal do projeto do grupo, ex.: estudar e propor um conceito de exoesqueleto de baixo custo para reabilitação de membros inferiores.]</em></p>
+      </div>
+      <div class="project-card fade-in">
+        <span class="project-tag">02</span>
+        <h3>Problema</h3>
+        <p><em>[Edite aqui: qual problema real o projeto pretende ajudar a resolver? Ex.: dificuldade de acesso a dispositivos de reabilitação motora.]</em></p>
+      </div>
+      <div class="project-card fade-in">
+        <span class="project-tag">03</span>
+        <h3>Como Pretendemos Desenvolver</h3>
+        <p><em>[Edite aqui: explique de forma geral as etapas de desenvolvimento — pesquisa, prototipagem, testes, etc.]</em></p>
+      </div>
+      <div class="project-card fade-in">
+        <span class="project-tag">04</span>
+        <h3>Materiais</h3>
+        <p><em>[Edite aqui: liste materiais possíveis, ex.: PVC, alumínio, impressão 3D, tecido elástico, correias, etc.]</em></p>
+      </div>
+      <div class="project-card fade-in">
+        <span class="project-tag">05</span>
+        <h3>Tecnologias</h3>
+        <p><em>[Edite aqui: liste tecnologias relacionadas, ex.: microcontroladores (Arduino/ESP32), sensores de movimento, motores servo.]</em></p>
+      </div>
+      <div class="project-card fade-in">
+        <span class="project-tag">06</span>
+        <h3>Resultado Esperado</h3>
+        <p><em>[Edite aqui: o que o grupo espera alcançar com o projeto ao final da apresentação.]</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9. MONTE SEU EXOESQUELETO ===================== -->
+<section class="section section-alt" id="monte-seu-exo">
+  <div class="section-inner">
+    <span class="section-eyebrow">FERRAMENTA INTERATIVA</span>
+    <h2 class="section-title">Monte seu Próprio Exoesqueleto</h2>
+    <p class="section-subtitle">Escolha as características e veja o conceito do seu exoesqueleto ser montado.</p>
+
+    <div class="builder">
+      <div class="builder-step" data-group="objetivo">
+        <h4>1. Objetivo</h4>
+        <div class="builder-options">
+          <button type="button" class="option-btn" data-value="Reabilitação">Reabilitação</button>
+          <button type="button" class="option-btn" data-value="Indústria">Indústria</button>
+          <button type="button" class="option-btn" data-value="Auxílio físico">Auxílio físico</button>
+          <button type="button" class="option-btn" data-value="Pesquisa">Pesquisa</button>
+        </div>
+      </div>
+
+      <div class="builder-step" data-group="estrutura">
+        <h4>2. Tipo de Estrutura</h4>
+        <div class="builder-options">
+          <button type="button" class="option-btn" data-value="Passiva">Passiva</button>
+          <button type="button" class="option-btn" data-value="Motorizada">Motorizada</button>
+        </div>
+      </div>
+
+      <div class="builder-step" data-group="alimentacao">
+        <h4>3. Alimentação</h4>
+        <div class="builder-options">
+          <button type="button" class="option-btn" data-value="Bateria">Bateria</button>
+          <button type="button" class="option-btn" data-value="Fonte externa">Fonte externa</button>
+        </div>
+      </div>
+
+      <div class="builder-step" data-group="sensores">
+        <h4>4. Sensores</h4>
+        <div class="builder-options">
+          <button type="button" class="option-btn" data-value="Movimento">Movimento</button>
+          <button type="button" class="option-btn" data-value="Pressão">Pressão</button>
+          <button type="button" class="option-btn" data-value="EMG">EMG</button>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary builder-submit" id="builderSubmit">Criar meu Exoesqueleto</button>
+
+      <div class="builder-result" id="builderResult">
+        <h3>SEU EXOESQUELETO</h3>
+        <div class="result-grid">
+          <p><span>Modelo:</span> <strong id="resObjetivo">—</strong></p>
+          <p><span>Estrutura:</span> <strong id="resEstrutura">—</strong></p>
+          <p><span>Alimentação:</span> <strong id="resAlimentacao">—</strong></p>
+          <p><span>Sensores:</span> <strong id="resSensores">—</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10. EQUIPE ===================== -->
+<section class="section" id="equipe">
+  <div class="section-inner">
+    <span class="section-eyebrow">QUEM SOMOS</span>
+    <h2 class="section-title">Nossa Equipe</h2>
+    <p class="section-subtitle">Integrantes do grupo responsáveis pelo desenvolvimento deste projeto.</p>
+
+    <div class="team-grid">
+      <div class="team-card fade-in">
+        <div class="team-avatar">👤</div>
+        <h3>Pedro Nascimento</h3>
+        <span class="team-role">Desenvolvimento Web</span>
+        <p>Responsável pela criação do site, estrutura HTML, estilização CSS e funcionalidades JavaScript.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">👤</div>
+        <h3>Raul Noronha</h3>
+        <span class="team-role">Pesquisa</span>
+        <p>Responsável pela pesquisa sobre história, funcionamento e aplicações dos exoesqueletos.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">👤</div>
+        <h3>João Azevedo</h3>
+        <span class="team-role">Pesquisa</span>
+        <p>Responsável pela pesquisa sobre história, funcionamento e aplicações dos exoesqueletos.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">👤</div>
+        <h3>Joana</h3>
+        <span class="team-role">Pesquisa</span>
+        <p>Responsável pela pesquisa sobre história, funcionamento e aplicações dos exoesqueletos.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">👤</div>
+        <h3>Estevam Barbosa</h3>
+        <span class="team-role">Desenvolvimento do Projeto</span>
+        <p>Responsável pela pesquisa e desenvolvimento da parte estrutural do projeto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 11. FORMULÁRIO ===================== -->
+<section class="section section-alt" id="formulario">
+  <div class="section-inner">
+    <span class="section-eyebrow">PARTICIPE</span>
+    <h2 class="section-title">O que você acha dos exoesqueletos?</h2>
+    <p class="section-subtitle">Sua opinião ajuda o grupo a entender melhor a percepção pública sobre essa tecnologia.</p>
+
+    <form class="opinion-form" id="opinionForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+          <span class="error-msg" id="err-nome"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@email.com">
+          <span class="error-msg" id="err-email"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Você já conhecia essa tecnologia?</label>
+        <div class="radio-row">
+          <label class="radio-option"><input type="radio" name="conhecia" value="Sim"> Sim</label>
+          <label class="radio-option"><input type="radio" name="conhecia" value="Não"> Não</label>
+        </div>
+        <span class="error-msg" id="err-conhecia"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="aplicacao">Qual aplicação você considera mais importante?</label>
+        <select id="aplicacao" name="aplicacao">
+          <option value="">Selecione uma opção</option>
+          <option value="Medicina">Medicina</option>
+          <option value="Indústria">Indústria</option>
+          <option value="Acessibilidade">Acessibilidade</option>
+          <option value="Pesquisa">Pesquisa</option>
+          <option value="Outra">Outra</option>
+        </select>
+        <span class="error-msg" id="err-aplicacao"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="opiniao">O que você achou do nosso projeto?</label>
+        <textarea id="opiniao" name="opiniao" rows="4" placeholder="Escreva sua opinião..."></textarea>
+        <span class="error-msg" id="err-opiniao"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="sugestoes">Sugestões</label>
+        <textarea id="sugestoes" name="sugestoes" rows="3" placeholder="Deixe sugestões para o grupo (opcional)"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enviar Formulário</button>
+
+      <div class="form-success" id="formSuccess">
+        ✅ Formulário enviado com sucesso! Obrigado por compartilhar sua opinião.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== 12. MUNDO ===================== -->
+<section class="section" id="mundo">
+  <div class="section-inner">
+    <span class="section-eyebrow">PANORAMA GLOBAL</span>
+    <h2 class="section-title">Exoesqueletos no Mundo</h2>
+    <p class="section-subtitle">Clique em um país para conhecer projetos e instituições relevantes na história dos exoesqueletos.</p>
+
+    <div class="world-panel">
+      <div class="world-countries" id="worldCountries">
+        <!-- populated by JS -->
+      </div>
+      <div class="world-detail" id="worldDetail">
+        <p class="world-placeholder">Selecione um país para ver detalhes sobre pesquisas e projetos de exoesqueletos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 13. FUTURO ===================== -->
+<section class="section section-future" id="futuro">
+  <div class="section-inner">
+    <span class="section-eyebrow">O QUE VEM A SEGUIR</span>
+    <h2 class="section-title">Futuro dos Exoesqueletos</h2>
+
+    <div class="future-grid">
+      <div class="future-item fade-in"><span>🧠</span> Inteligência Artificial</div>
+      <div class="future-item fade-in"><span>📡</span> Sensores mais inteligentes</div>
+      <div class="future-item fade-in"><span>🔋</span> Baterias com maior autonomia</div>
+      <div class="future-item fade-in"><span>🪶</span> Materiais mais leves</div>
+      <div class="future-item fade-in"><span>🛋️</span> Maior conforto</div>
+      <div class="future-item fade-in"><span>♿</span> Maior acessibilidade</div>
+      <div class="future-item fade-in"><span>⚡</span> Sistemas mais eficientes</div>
+    </div>
+
+    <p class="future-quote fade-in">"E se a tecnologia pudesse ampliar os limites do corpo humano?"</p>
+  </div>
+</section>
+
+<!-- ===================== 14. REFERÊNCIAS ===================== -->
+<section class="section section-alt" id="referencias">
+  <div class="section-inner">
+    <span class="section-eyebrow">FONTES</span>
+    <h2 class="section-title">Referências</h2>
+    <p class="section-subtitle">Fontes utilizadas na pesquisa e no desenvolvimento deste projeto.</p>
+
+    <div class="ref-list">
+      <div class="ref-item fade-in">
+        <h4>Wikipedia — Hardiman</h4>
+        <p>Verbete sobre o Hardiman, desenvolvido pela General Electric (1965–1971), considerado o primeiro exoesqueleto motorizado de corpo inteiro. Utilizado na seção de História.</p>
+        <a href="https://en.wikipedia.org/wiki/Hardiman" target="_blank" rel="noopener">en.wikipedia.org/wiki/Hardiman</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>Guinness World Records — First powered exoskeleton</h4>
+        <p>Registro sobre o Hardiman como o primeiro exoesqueleto motorizado de corpo inteiro, incluindo dados sobre capacidade de carga e período de desenvolvimento.</p>
+        <a href="https://www.guinnessworldrecords.com/world-records/692885-first-powered-exoskeleton" target="_blank" rel="noopener">guinnessworldrecords.com</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>Wikipedia — Berkeley Lower Extremity Exoskeleton (BLEEX)</h4>
+        <p>Informações sobre o BLEEX, desenvolvido na UC Berkeley com financiamento da DARPA, apresentado em 2003/2004. Utilizado na seção de História.</p>
+        <a href="https://en.wikipedia.org/wiki/Berkeley_Lower_Extremity_Exoskeleton" target="_blank" rel="noopener">en.wikipedia.org/wiki/Berkeley_Lower_Extremity_Exoskeleton</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>Robotics & Human Engineering Laboratory — UC Berkeley</h4>
+        <p>Página oficial do laboratório responsável pelo desenvolvimento do BLEEX e de outros exoesqueletos de pesquisa.</p>
+        <a href="https://bleex.me.berkeley.edu/" target="_blank" rel="noopener">bleex.me.berkeley.edu</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>Wikipedia — Hybrid Assistive Limb (HAL)</h4>
+        <p>Informações sobre o exoesqueleto HAL, desenvolvido pela Universidade de Tsukuba e pela empresa Cyberdyne (Japão), incluindo marcos de certificação.</p>
+        <a href="https://en.wikipedia.org/wiki/Hybrid_Assistive_Limb" target="_blank" rel="noopener">en.wikipedia.org/wiki/Hybrid_Assistive_Limb</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>Wikipedia — Cyberdyne Inc.</h4>
+        <p>Histórico da empresa japonesa Cyberdyne, fundada em 2004 para comercializar o exoesqueleto HAL.</p>
+        <a href="https://en.wikipedia.org/wiki/Cyberdyne_Inc." target="_blank" rel="noopener">en.wikipedia.org/wiki/Cyberdyne_Inc.</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>EduExo — Exoskeleton History</h4>
+        <p>Artigo educacional com linha do tempo sobre o desenvolvimento histórico dos exoesqueletos robóticos, incluindo pesquisas anteriores ao Hardiman.</p>
+        <a href="https://www.eduexo.com/resources/articles/exoskeleton-history/" target="_blank" rel="noopener">eduexo.com/resources/articles/exoskeleton-history</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>Lifeward (ReWalk Robotics) — Comunicado de imprensa</h4>
+        <p>Anúncio oficial da aprovação do exoesqueleto ReWalk pela FDA para uso pessoal domiciliar em 2014, primeiro caso do tipo nos EUA.</p>
+        <a href="https://ir.rewalk.com/news-releases/news-release-details/rewalktm-personal-exoskeleton-system-cleared-fda-home-use" target="_blank" rel="noopener">ir.rewalk.com</a>
+      </div>
+      <div class="ref-item fade-in">
+        <h4>Christopher &amp; Dana Reeve Foundation — Personal Exoskeletons</h4>
+        <p>Panorama sobre exoesqueletos pessoais aprovados pela FDA (ReWalk e Ekso Indego) e seus benefícios para pessoas com lesão medular.</p>
+        <a href="https://www.christopherreeve.org/todays-care/living-with-paralysis/rehabilitation/personal-exoskeletons/" target="_blank" rel="noopener">christopherreeve.org</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="#topo" class="logo footer-logo">
+        <span class="logo-bracket">&lt;</span>EXO<span class="logo-accent">SKEL</span><span class="logo-bracket">/&gt;</span>
+      </a>
+      <p>Projeto acadêmico sobre exoesqueletos: história, funcionamento, aplicações e o futuro dessa tecnologia que amplia possibilidades.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#aplicacoes">Aplicações</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#formulario">Formulário</a></li>
+        <li><a href="#referencias">Referências</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sobre o projeto</h4>
+      <p>Projeto desenvolvido por <strong><a href="https://www.instagram.com/" target="_blank" rel="noopener">Pedro</a></strong></p>
+       <p>Projeto desenvolvido por <strong><a href="https://www.instagram.com/" target="_blank" rel="noopener">Raul</a></strong></p>
+        <p>Projeto desenvolvido por <strong><a href="https://www.instagram.com/" target="_blank" rel="noopener">Joana</a></strong></p>
+         <p>Projeto desenvolvido por <strong><a href="https://www.instagram.com/" target="_blank" rel="noopener">João</a></strong></p>
+          <p>Projeto desenvolvido por <strong><a href="https://www.instagram.com/" target="_blank" rel="noopener">Estevam</a></strong></p>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+<script src="script/script.js"></script>
+</body>
+</html>
