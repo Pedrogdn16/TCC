@@ -157,7 +157,7 @@ input, select, textarea { font-family: inherit; }
   color: var(--white);
 }
 .logo-accent { color: var(--accent); }
-.logo-bracket { color: var(--grey-light); opacity: 0.6; }
+.logo-bracket { color: var(--grey-light); opacity: 0.6; displY: nome;}
 
 .main-nav ul {
   display: flex;
